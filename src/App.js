@@ -8,15 +8,20 @@ function Square({value, onSquareClick}) {
     >{value}</button>;
 }
 
-function Board({xIsNext, squares, onPlay}) {
+function Board({ xIsNext, squares, onPlay, isTie }) {
 
     const winner = calculateWinner(squares);
     let status;
-    if (winner) {
-        status = "Winner: " + winner
+    if (isTie) {
+        status = "It's a tie!"
     } else {
-        status = "Next player: " + (xIsNext ? "X" : "O");
+        if (winner) {
+            status = "Winner: " + winner
+        } else {
+            status = "Next player: " + (xIsNext ? "X" : "O");
+        }
     }
+
 
 
     function handleClick(i) {
@@ -55,17 +60,19 @@ function Board({xIsNext, squares, onPlay}) {
 }
 
 export default function Game () {
-    const [xIsNext, setXIsNext] = useState(true)
     const [history, setHistory] = useState([Array(9).fill(null)])
-    const currentSquares = history[history.length - 1]
+    const [currentMove, setCurrentMove] = useState(0)
+    const xIsNext = currentMove % 2 === 0;
+    const currentSquares = history[currentMove]
 
     function handlePlay(nextSquares) {
-        setHistory([...history, nextSquares])
-        setXIsNext(!xIsNext)
+        const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
+        setHistory(nextHistory)
+        setCurrentMove(nextHistory.length - 1)
     }
 
     function JumpTo(nextMove) {
-
+        setCurrentMove(nextMove)
     }
 
     const moves = history.map((squares, move) => {
@@ -76,16 +83,15 @@ export default function Game () {
             description = "Go to game start";
         }
         return (
-            <li>
+            <li key={move}>
                 <button onClick={() => JumpTo(move)}>{description}</button>
             </li>
         )
     });
-
     return (
         <div className="game">
             <div className="game-board">
-                <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
+                <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} isTie={history.length === 10 && calculateWinner(currentSquares) === null} />
             </div>
             <div className="game-info">
                 <ol>{moves}</ol>
