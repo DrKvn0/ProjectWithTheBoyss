@@ -1,3 +1,56 @@
 h1 {
   font-size: 48px;
 }
+
+.addExpenseLabel {
+  position: absolute;
+  margin-left: 20px;
+  font-size: 30px;
+
+}
+
+.addExpenseTextField {
+  border-radius: 30px;
+  border-color: transparent;
+  background-color: lightgray;
+  padding: 10px 10px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 24px;
+  opacity: 0.7;
+}
+
+.input-symbol-euro {
+  position: relative;
+}
+.input-symbol-euro input {
+  padding-left:18px;
+}
+.input-symbol-euro:before {
+  position: relative;
+  top: 3px;
+  content:"€";
+  font-size: 36px;
+  left: 0;
+}
+
+.addExpenseButton {
+  border-radius: 10px;
+  border-color: transparent;
+  background-color: #C4CBEE;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 32px;
+  opacity: 0.7;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.addExpenseButton:hover{
+  opacity: 1;
+}
