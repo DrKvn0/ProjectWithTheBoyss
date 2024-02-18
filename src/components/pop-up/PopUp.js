@@ -1,7 +1,7 @@
-import "./AddExpense.css"
+import "./popUp.css"
 import {ReactComponent as IconClose} from "./Close-icon.svg";
 
-export default function AddExpense({isOpen, onClose, children}) {
+export default function PopUp({isOpen, onClose, children}) {
     const onBackgroundClick = (event) => {
         if (event.target.classList.contains("modal-wrapper")) onClose();
     }
@@ -15,7 +15,6 @@ export default function AddExpense({isOpen, onClose, children}) {
                             <IconClose />
                         </button>
                         {children}
-                        <center><button className="done-button" onClick={() => onClose()}>Done</button></center>
                     </div>
                 </div>
             </div>)}

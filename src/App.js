@@ -1,38 +1,38 @@
-import './App.css';
+import './app.css';
 import { useState } from "react";
-import AddExpense from "./AddExpense/AddExpense";
+import PopUp from "./components/pop-up/PopUp";
+import InputField, { SubmitButton } from "./components/input-field/InputField";
 
 export default function App() {
     const [addExpenseOpen, setAddExpenseOpen] = useState(false);
     return (
       <>
           <button className="addExpenseButton" onClick={() => setAddExpenseOpen(true)}>Button</button>
-        <AddExpense isOpen={addExpenseOpen} onClose={() => setAddExpenseOpen(false)}>
+        <PopUp isOpen={addExpenseOpen} onClose={() => setAddExpenseOpen(false)}>
             <h1>ADD EXPENSE</h1>
             <br/>
             <form>
-                <label htmlFor="name" className="addExpenseLabel"><strong><u>Name</u>:</strong></label><br/><br/>
+                <InputField name="name" type="text" placeholder="e.g. Coffee" isRequired={true}/>
 
-                <input className="addExpenseTextField" type="text" id="name" name="name"
-                       placeholder={"e.g. Coffee"}/><br/><br/>
+                {/*<label htmlFor="amount" className="addExpenseLabel">*/}
+                {/*    <strong><u>Amount</u>:</strong>*/}
+                {/*</label>*/}
+                {/*<br/>*/}
+                {/*<br/>*/}
+                {/*<div className="input-symbol-euro">*/}
+                {/*    <input className="addExpenseTextField" type="number" id="amount" name="amount"/>*/}
+                {/*</div>*/}
 
-                <label htmlFor="amount" className="addExpenseLabel"><strong><u>Amount</u>:</strong></label><br/><br/>
-                <div className="input-symbol-euro">
-                    <input className="addExpenseTextField" type="number" id="amount" name="amount"/>
-                </div>
+                <InputField name="amount" type="number" placeholder="3" isRequired={true}/>
 
-                <label htmlFor="date" className="addExpenseLabel"><strong><u>Date</u>:</strong></label><br/><br/>
-                <div>
-                    <input className="addExpenseTextField" type="date" id="date" name="date"/>
-                </div>
+                <InputField name="date" type="date" isRequired={true}/>
 
-                <label htmlFor="comment" className="addExpenseLabel"><strong><u>Comment</u>:</strong></label><br/><br/>
-                <div>
-                    <textarea className="addExpenseTextField" id="comment" name="comment"></textarea>
-                </div>
+                <InputField name="comment" type="textarea" placeholder="Type here..." isRequired={false}/>
+
+                <SubmitButton />
             </form>
             <br/>
-        </AddExpense>
+        </PopUp>
       </>
     );
 }

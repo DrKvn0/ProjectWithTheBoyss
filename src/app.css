@@ -3,9 +3,7 @@ h1 {
 }
 
 .addExpenseLabel {
-  position: absolute;
-  margin-left: 20px;
-  font-size: 30px;
+
 
 }
 
@@ -24,10 +22,11 @@ h1 {
   position: relative;
 }
 .input-symbol-euro input {
-  padding-left:18px;
+  padding-left: 18px;
 }
+
 .input-symbol-euro:before {
-  position: relative;
+  position: absolute;
   top: 3px;
   content:"€";
   font-size: 36px;
