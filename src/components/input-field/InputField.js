@@ -1,6 +1,8 @@
 import "./inputField.css"
+import React from "react"
 
-export default function InputField({type, name, placeholder, isRequired}) {
+
+export default function InputField({type, name, placeholder, isRequired, register}) {
     // function inputLine() {
     //     if (isRequired) {
     //         return (
@@ -19,7 +21,7 @@ export default function InputField({type, name, placeholder, isRequired}) {
                 {/*<label htmlFor={name}>*/}
                 {/*    <strong><u>{name.charAt(0).toUpperCase() + name.slice(1)}</u>:</strong>*/}
                 {/*</label>*/}
-                <textarea id={name} name={name} placeholder={"Type the comment here..."}></textarea>
+                <textarea id={name} name={name} placeholder={"Type the comment here..."} {...register(name)}></textarea>
                 <br/>
                 <br/>
             </>
@@ -30,7 +32,7 @@ export default function InputField({type, name, placeholder, isRequired}) {
                 {/*<label htmlFor={name}>*/}
                 {/*    <strong><u>{name.charAt(0).toUpperCase() + name.slice(1)}</u>:</strong>*/}
                 {/*</label>*/}
-                <input type={type} id={name} name={name} placeholder={placeholder} required={isRequired}/>
+                <input type={type} id={name} name={name} placeholder={placeholder} required={isRequired} {...register(name)}/>
                 <br/>
                 <br/>
             </>

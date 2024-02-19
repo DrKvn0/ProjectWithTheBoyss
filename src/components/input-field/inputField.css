@@ -153,7 +153,7 @@ label[for=file] {
     border: .2em solid #505050;
     background: hsl(0 0 0/0);
     padding: .85em 1.5em;
-    color: rgba(233, 30, 99, 1);
+    color: rgba(80, 80, 80, 1);
     border-radius: 2em;
     transition: 1s;
     &:hover, &:focus, &:active {
@@ -169,7 +169,7 @@ label[for=file] {
        color: #505050;
    // &::-webkit-datetime-edit { padding: 1em; }
    // &::-webkit-datetime-edit-fields-wrapper { background: rgba(80, 80, 80, 0.2); }
-       &::-webkit-datetime-edit-text { color: deepskyblue; padding: 0 0.3em; }
+       &::-webkit-datetime-edit-text { color: #505050; padding: 0 0.3em; }
    // &::-webkit-datetime-edit-month-field { color: #505050; }
    // &::-webkit-datetime-edit-day-field { color: #505050; }
    // &::-webkit-datetime-edit-year-field { color: #505050; }
@@ -193,7 +193,7 @@ label[for=file] {
        margin: 0;
        &::-webkit-inner-spin-button {
            opacity: 1;
-           background: deepskyblue;
+           background: #505050;
        }
    }
 
