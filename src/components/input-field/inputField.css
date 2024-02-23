@@ -23,6 +23,37 @@ label {
 /*    display: grid;*/
 /*}*/
 
+input[type=text].currency {
+    padding: 20px;
+    border: .2em solid #505050;
+    border-radius: 20px;
+    text-align: left;
+    color: #505050;
+    appearance: textfield;
+    margin: 0;
+    width: 60%;
+    font-size: 20px;
+}
+
+.currency-input {
+    position: relative;
+    width: 200px;
+}
+
+.currency-input input {
+    width: 100%;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+
+.currency-input::before {
+    content: "€";
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2em;
+}
 
    input[type=text] {
        appearance: none;

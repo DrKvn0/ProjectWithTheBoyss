@@ -1,0 +1,20 @@
+.expenseTable {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border-collapse: collapse;
+    width: 80%;
+}
+
+th, td {
+    border: 2px solid black;
+    padding: 8px;
+}
+
+th {
+    font-size: 24px;
+    text-align: left;
+    min-width: 120px;
+}
