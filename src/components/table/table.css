@@ -18,3 +18,16 @@ th {
     text-align: left;
     min-width: 120px;
 }
+
+.category {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 12px;
+    transition-duration: 0.4s;
+}

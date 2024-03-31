@@ -1,43 +1,11 @@
 import "./inputField.css"
 import React, { useState } from "react"
 import {NumericFormat} from "react-number-format";
+import Dropdown from "../dropdown/Dropdown";
 
 
 
-export default function InputField({type, name, placeholder, isRequired, register, setValue}) {
-    // function inputLine() {
-    //     if (isRequired) {
-    //         return (
-    //             <input type={type} id={name} name={name} placeholder={placeholder} />
-    //         );
-    //     } else {
-    //         return (
-    //             <input type={type} id={name} name={name} placeholder={placeholder}/>
-    //         );
-    //     }
-    // }
-
-    // function CurrencyInput() {
-    //     const [value, setValue] = React.useState('');
-    //
-    //     function handleChange(event) {
-    //         setValue(event.target.value);
-    //         console.log(value);
-    //     }
-    //
-    //     return (
-    //         <NumericFormat
-    //             className={"currency"}
-    //             value={value}
-    //             onChange={handleChange}
-    //             thousandSeparator
-    //             prefix="€"
-    //             decimalScale={2}
-    //             fixedDecimalScale
-    //             customInput={}
-    //         />
-    //     );
-    // }
+export default function InputField({type, name, placeholder, isRequired, register, setValue, options}) {
 
     const [value, setVal] = useState('');
 
@@ -46,10 +14,6 @@ export default function InputField({type, name, placeholder, isRequired, registe
         setVal(event.target.value);
     }
 
-    // function transformDate(date_str) {
-    //     let dates = date_str.split(" ");
-    //
-    // }
 
 
     if (type === "currency") {
@@ -98,6 +62,14 @@ export default function InputField({type, name, placeholder, isRequired, registe
                 <br/>
             </>
         )
+    }
+
+    if (type === "category") {
+        return (
+            <>
+                <Dropdown name={name} setValue={setValue} options={options}></Dropdown>
+            </>
+        );
     }
 
     if (type === "textarea") {

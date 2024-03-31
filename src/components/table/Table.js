@@ -15,6 +15,7 @@ export default function ExpenseTable({data}) {
                     <thead>
                     <tr>
                         <th>Name</th>
+                        <th>Category</th>
                         <th>Amount</th>
                         <th>Date</th>
                         <th>Comment</th>
@@ -24,6 +25,9 @@ export default function ExpenseTable({data}) {
                     {data.map((expense, index) => (
                         <tr key={index}>
                             <td>{expense.name}</td>
+                            <td>
+                                <p className="category">{expense.category}</p>
+                            </td>
                             <td>{expense.amount}</td>
                             <td>{formatDate(expense.date)}</td>
                             <td>{expense.comment}</td>

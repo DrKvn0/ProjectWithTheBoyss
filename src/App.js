@@ -5,8 +5,10 @@ import PopUp from "./components/pop-up/PopUp";
 import InputField, {SubmitButton} from "./components/input-field/InputField";
 import ExpenseTable from "./components/table/Table";
 import MonthlyCapNumber from "./components/statistics/Stat";
-
+import {Tag, TagList} from "./components/tags/Tags";
+import Dropdown from "./components/dropdown/Dropdown";
 const expenses = [];
+const categories = ["Eating out", "Drinking", "Groceries", "Accommodation"]
 
 let total_expenses = 0;
 
@@ -48,6 +50,7 @@ export default function App() {
                 <InputField name="amount" type="currency" placeholder="3" isRequired={true} register={register} setValue={setValue}/>
                 <InputField name="date" type="date_past" isRequired={true} register={register} setValue={setValue}/>
                 <InputField name="comment" type="textarea" placeholder="Type here..." isRequired={false} register={register} setValue={setValue}/>
+                <InputField name="category" type="category" isRequired={true} setValue={setValue} options={categories}/>
                 <SubmitButton />
             </form>
             <br/>
