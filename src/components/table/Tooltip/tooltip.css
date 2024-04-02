@@ -1,0 +1,27 @@
+.tooltip-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tooltip {
+    position: fixed;
+    background-color: white;
+    color: black;
+    padding: 5px;
+    z-index: 1;
+    width: 300px;
+    max-width: 300px;
+    min-height: 65px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    word-wrap: break-word;
+    text-align: left;
+    top: 0px;
+    left: 0px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+  
+  .tooltip-container:hover .tooltip {
+    opacity: 1;
+  }

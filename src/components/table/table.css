@@ -1,33 +1,55 @@
-.expenseTable {
+.table-container {
     position: absolute;
     top: 50%;
     left: 50%;
+    margin: 0 auto;
     transform: translate(-50%, -50%);
-
-    border-collapse: collapse;
-    width: 80%;
+    width: 1000px; 
 }
 
-th, td {
-    border: 2px solid black;
-    padding: 8px;
+.expenseTable {
+    width: 100%;
+    border-collapse: collapse;
 }
 
 th {
-    font-size: 24px;
+    border: 1px solid #ddd;
+    padding: 8px;
+    width: 150px; 
+    max-width: 150px; 
+    font-size: 18px;
+    font-weight: bold;
     text-align: left;
-    min-width: 120px;
+    background-color: #f2f2f2;
+}
+
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    width: 150px; 
+    max-width: 150px; 
+    font-size: 16px;
 }
 
 .category {
+    display: inline-block;
+    padding: 8px 12px;
     background-color: #4CAF50;
     color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    border-radius: 12px;
-    transition-duration: 0.4s;
+    border-radius: 4px;
+}
+
+.comment, .comment-content{
+    max-width: 300px; 
+    max-height: 65px; 
+}
+
+.comment {
+    width: 300px; 
+}
+
+.comment-content {
+    word-wrap: break-word; /* Break up long words */
+    overflow: hidden; /* Trim text that extends beyond the cell borders */
+
 }
