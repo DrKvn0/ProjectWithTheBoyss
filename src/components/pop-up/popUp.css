@@ -9,7 +9,7 @@
     overflow: hidden;
     overflow-y: auto;
     transition: opacity 0.3s;
-    z-index: 999;
+    z-index: 1;
 }
 
 .modal-wrapper {

@@ -1,5 +1,7 @@
 import "./table.css"
 import React from "react";
+import {categories} from "../../App";
+import {getContrastYIQ} from "../dropdown/Dropdown";
 
 function formatDate(date_old) {
     const dates = date_old.split('-');
@@ -26,7 +28,9 @@ export default function ExpenseTable({data}) {
                         <tr key={index}>
                             <td>{expense.name}</td>
                             <td>
-                                <p className="category">{expense.category}</p>
+                                <p className="category" style={{backgroundColor: categories[expense.category]}}>
+                                    <p style={{color: getContrastYIQ(categories[expense.category])}}>{expense.category}</p>
+                                </p>
                             </td>
                             <td>{expense.amount}</td>
                             <td>{formatDate(expense.date)}</td>

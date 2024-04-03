@@ -8,8 +8,14 @@ import MonthlyCapNumber from "./components/statistics/Stat";
 import {Tag, TagList} from "./components/tags/Tags";
 import Dropdown from "./components/dropdown/Dropdown";
 const expenses = [];
-const categories = ["Eating out", "Drinking", "Groceries", "Accommodation"]
 
+export const categories = {
+    "Eating out": "#FF0000",
+    "Drinking": "#0000FF",
+    "Groceries": "#008000",
+    "Accommodation": "#800080",
+    "Gay": "#FFFFFF"
+}
 let total_expenses = 0;
 
 function parseCur(NumStr) {
@@ -30,7 +36,7 @@ export default function App() {
         console.log(data);
         expenses.push(data);
         console.log(parseCur(data.amount))
-        total_expenses += parseCur(data.amount);
+        total_expenses += parseCur(data.amount);//translating into cents
         console.log(total_expenses)
         console.log(expenses)
         setAddExpenseOpen(false);
@@ -49,8 +55,8 @@ export default function App() {
                 <InputField name="name" type="text" placeholder="e.g. Coffee" isRequired={true} register={register} setValue={setValue}/>
                 <InputField name="amount" type="currency" placeholder="3" isRequired={true} register={register} setValue={setValue}/>
                 <InputField name="date" type="date_past" isRequired={true} register={register} setValue={setValue}/>
+                <InputField name="category" type="category" isRequired={true} setValue={setValue} options={Reflect.ownKeys(categories)}/>
                 <InputField name="comment" type="textarea" placeholder="Type here..." isRequired={false} register={register} setValue={setValue}/>
-                <InputField name="category" type="category" isRequired={true} setValue={setValue} options={categories}/>
                 <SubmitButton />
             </form>
             <br/>
