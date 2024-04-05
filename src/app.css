@@ -46,6 +46,20 @@ h1 {
   left: 65%;
 }
 
+.addTagButton {
+  background-color: #505050;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 32px;
+  transition: background-color 0.3s, transform 0.3s;
+  position: absolute;
+  top: 16%;
+  left: 42%;
+}
+
 .addExpenseButton:hover {
   background-color: #3b3b3b;
   transform: translateY(-4px); /* Move button 2px up on hover */

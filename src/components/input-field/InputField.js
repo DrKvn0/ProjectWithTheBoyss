@@ -1,8 +1,7 @@
 import "./inputField.css"
 import React, { useState } from "react"
 import {NumericFormat} from "react-number-format";
-import Dropdown from "../dropdown/Dropdown";
-
+import Tags from "../tags/Tags";
 
 
 export default function InputField({type, name, placeholder, isRequired, register, setValue, options}) {
@@ -64,10 +63,16 @@ export default function InputField({type, name, placeholder, isRequired, registe
         )
     }
 
+    if (type === "color") {
+        return (
+            <input type="color" id={name} name={name} required={isRequired} {...register(name)}/>
+        );
+    }
+
     if (type === "category") {
         return (
             <>
-                <Dropdown name={name} setValue={setValue} options={options}></Dropdown>
+                <Tags name={name} setValue={setValue} options={options}></Tags>
             </>
         );
     }

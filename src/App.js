@@ -8,11 +8,10 @@ import MonthlyCapNumber from "./components/statistics/Stat";
 const expenses = [];
 
 export const categories = {
-    "Eating out": "#FF0000",
-    "Drinking": "#0000FF",
-    "Groceries": "#008000",
-    "Accommodation": "#800080",
-    "Gay": "#FFFFFF"
+    "Eating out": "#FFD1DC",
+    "Drinking": "#FFFFCC",
+    "Groceries": "#A2D5F2",
+    "Accommodation": "#D7BDE2"
 }
 let total_expenses = 0;
 
@@ -24,10 +23,18 @@ function parseCur(NumStr) {
 
 export default function App() {
     const [addExpenseOpen, setAddExpenseOpen] = useState(false);
+    const [addTagOpen, setAddTagOpen]= useState(false);
     const { register, handleSubmit, reset, setValue } = useForm();
 
 
-
+    const onTagSubmit = (data, event) => {
+        event.preventDefault();
+        console.log(data);
+        data.tagColor = data.tagColor.toUpperCase();
+        categories[data.tagName] = data.tagColor;
+        setAddTagOpen(false);
+        reset();
+    }
 
     const onSubmit = (data, event) => {
         event.preventDefault();
@@ -46,6 +53,16 @@ export default function App() {
       <>
           <MonthlyCapNumber expenses={total_expenses}/>
           <button className="addExpenseButton" onClick={() => setAddExpenseOpen(true)}>Add Expense</button>
+          <button className="addTagButton" onClick={() => setAddTagOpen(true)}>Add Tag</button>
+          <PopUp isOpen={addTagOpen} onClose={() => setAddTagOpen(false)}>
+              <h1>ADD TAG</h1>
+              <br/>
+              <form onSubmit={handleSubmit((data, event) => onTagSubmit(data, event))}>
+                  <InputField name="tagName" type="text" placeholder="e.g. Groceries" isRequired={true} register={register} />
+                  <InputField name="tagColor" type="color" register={register} />
+                  <SubmitButton />
+              </form>
+          </PopUp>
         <PopUp isOpen={addExpenseOpen} onClose={() => setAddExpenseOpen(false)}>
             <h1>ADD EXPENSE</h1>
             <br/>
