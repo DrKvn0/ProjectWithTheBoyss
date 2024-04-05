@@ -7,6 +7,7 @@ import ExpenseTable from "./components/table/Table";
 import MonthlyCapNumber from "./components/statistics/Stat";
 import {Tag, TagList} from "./components/tags/Tags";
 import Dropdown from "./components/dropdown/Dropdown";
+
 const expenses = [];
 const categories = ["Eating out", "Drinking", "Groceries", "Accommodation"]
 

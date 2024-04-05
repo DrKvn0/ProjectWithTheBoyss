@@ -40,16 +40,12 @@ td {
 }
 
 .comment, .comment-content{
-    max-width: 300px; 
-    max-height: 65px; 
+    max-width: 300px; /* Максимальная ширина комментария */
+    max-height: 65px; /* Максимальная высота ячейки */
+    word-wrap: break-word; /* Разрывать длинные слова */
+    overflow: hidden; /* Обрезаем текст, который выходит за границы ячейки */ 
 }
 
 .comment {
     width: 300px; 
-}
-
-.comment-content {
-    word-wrap: break-word; /* Break up long words */
-    overflow: hidden; /* Trim text that extends beyond the cell borders */
-
 }

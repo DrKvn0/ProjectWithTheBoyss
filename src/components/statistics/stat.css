@@ -5,3 +5,39 @@
     transform: translate(-80%, -70%);
     font-size: 64px;
 }
+
+.addMonthlyCapButton {
+    background-color: #505050;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 32px;
+    transition: background-color 0.3s, transform 0.3s;
+    position: absolute;
+    top: 40%;
+    left: 23%;
+  }
+  
+  .addMonthlyCapButton:hover {
+    background-color: #3b3b3b;
+    transform: translateY(-4px); /* Move button 2px up on hover */
+  }
+
+  .saveMonthlyCapButton{
+    background-color: #505050;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 32px;
+    transition: background-color 0.3s, transform 0.3s;
+    position: absolute;
+  }
+
+  .saveMonthlyCapButton:hover{
+    background-color: #3b3b3b;
+    transform: translateY(-4px); /* Move button 2px up on hover */
+  }
