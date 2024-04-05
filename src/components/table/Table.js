@@ -35,7 +35,7 @@ export default function ExpenseTable({data}) {
     };
     
     return (
-        <div className="table-container">
+        <div class="table-container">
             <table className="expenseTable" id = "expenseTable">
                 <thead>
                     <tr>
@@ -56,7 +56,7 @@ export default function ExpenseTable({data}) {
                             <td>{expense.amount}</td>
                             <td>{formatDate(expense.date)}</td>
                             <td className="comment" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                                {expense.comment.length > 125 ? (
+                                {expense.comment.length > 160 ? (
                                     <>
                                         <span className="comment-content">{expense.comment.slice(0, 125)}</span>
                                         <Tooltip position={tooltipPosition} text={expense.comment} >{"..."}</Tooltip>
