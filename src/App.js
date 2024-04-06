@@ -38,6 +38,9 @@ export default function App() {
 
     const onSubmit = (data, event) => {
         event.preventDefault();
+        if (data.amount === undefined || data.amount === '') {
+            data.amount = "€0.00";
+        }
         console.log(data);
         expenses.push(data);
         console.log(parseCur(data.amount))

@@ -9,7 +9,7 @@ export default function InputField({type, name, placeholder, isRequired, registe
     const [value, setVal] = useState('');
 
     function handleChange(event) {
-        setValue("amount", event.target.value)
+        setValue("amount", (event.target.value));
         setVal(event.target.value);
     }
 
