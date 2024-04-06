@@ -56,7 +56,7 @@ export default function InputField({type, name, placeholder, isRequired, registe
                 {/*<label htmlFor={name}>*/}
                 {/*    <strong><u>{name.charAt(0).toUpperCase() + name.slice(1)}</u>:</strong>*/}
                 {/*</label>*/}
-                <input type="date" id={name} name={name} placeholder={placeholder} min={date_min} max={date_max} required={isRequired} {...register(name)}/>
+                <input type="date" id={name} name={name} placeholder={placeholder} min={date_min} max={date_max} defaultValue={date_max} required={isRequired} {...register(name)}/>
                 <br/>
                 <br/>
             </>
@@ -72,7 +72,7 @@ export default function InputField({type, name, placeholder, isRequired, registe
     if (type === "category") {
         return (
             <>
-                <Tags name={name} setValue={setValue} options={options}></Tags>
+                <Tags name={name} setValue={setValue} required={isRequired} options={options}></Tags>
             </>
         );
     }
