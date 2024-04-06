@@ -1,22 +1,78 @@
-.expenseTable {
+.table-container {
     position: absolute;
-    top: 50%;
+    top: 70%;
     left: 50%;
+    margin: 0 auto;
     transform: translate(-50%, -50%);
-
+    width: 1000px;
+    table-layout: fixed;
     border-collapse: collapse;
-    width: 80%;
 }
 
-th, td {
-    border: 2px solid black;
-    padding: 8px;
+.expenseTable {
+    width: 100%;
+    border-collapse: collapse;
 }
-
+/*
 th {
-    font-size: 24px;
+    border: 1px solid #ddd;
+    padding: 8px;
+    width: 150px;
+    max-width: 150px;
+    font-size: 18px;
+    font-weight: bold;
     text-align: left;
-    min-width: 120px;
+    background-color: #f2f2f2;
+}
+
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    width: 150px;
+    max-width: 150px;
+    font-size: 16px;
+}*/
+
+
+
+.table-container tbody{
+  display:block;
+  width: 100%;
+  overflow: auto;
+  height: 300px;
+}
+
+tbody::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+}
+
+.table-container thead tr {
+   display: block;
+   width: 100%;
+}
+
+.table-container thead {
+  background: black;
+  color:#fff;
+}
+
+.table-container th{
+    border: 1px solid #ddd;
+    padding: 8px;
+    width: 150px;
+    max-width: 150px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+    background-color: #f2f2f2;
+    color: black;
+}
+.table-container td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    width: 150px;
+    max-width: 150px;
+    font-size: 16px;
 }
 
 .category {
@@ -29,4 +85,16 @@ th {
     margin: 4px 2px;
     border-radius: 12px;
     transition-duration: 0.4s;
+}
+
+.comment, .comment-content{
+    max-width: 400px; /* Максимальная ширина комментария */
+    max-height: 65px; /* Максимальная высота ячейки */
+    word-wrap: break-word; /* Разрывать длинные слова */
+    overflow: hidden; /* Обрезаем текст, который выходит за границы ячейки */
+}
+
+.comment {
+    min-width: 400px !important;
+    width: 400px;
 }
