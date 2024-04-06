@@ -1,5 +1,5 @@
 import './app.css';
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import {useForm} from "react-hook-form"
 import PopUp from "./components/pop-up/PopUp";
 import InputField, {SubmitButton} from "./components/input-field/InputField";
@@ -18,9 +18,27 @@ function parseCur(NumStr) {
 
 export default function App() {
     const [addExpenseOpen, setAddExpenseOpen] = useState(false);
-    const { register, handleSubmit, reset, setValue } = useForm();
+    const { register,
+        handleSubmit,
+        reset,
+        setValue } = useForm();
 
-
+    const [data, setData] = useState(null);
+    useEffect(() => {
+        const callBackendAPI = async () => {
+            try {
+                const response = await fetch("/api");
+                if (!response.ok) {
+                    throw new Error("Failed to fetch data");
+                }
+                const body = await response.json();
+                setData(body.message);
+            } catch (error) {
+                console.error(error.message);
+            }
+        };
+        callBackendAPI();
+    }, []);
 
 
     const onSubmit = (data, event) => {
@@ -38,6 +56,7 @@ export default function App() {
 
     return (
       <>
+          <h1>{!data ? "Loading..." : data}</h1>
           <MonthlyCapNumber expenses={total_expenses}/>
           <button className="addExpenseButton" onClick={() => setAddExpenseOpen(true)}>Add Expense</button>
         <PopUp isOpen={addExpenseOpen} onClose={() => setAddExpenseOpen(false)}>
