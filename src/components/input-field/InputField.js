@@ -72,7 +72,7 @@ export default function InputField({type, name, placeholder, isRequired, registe
     if (type === "category") {
         return (
             <>
-                <Tags name={name} setValue={setValue} required={isRequired} options={options}></Tags>
+                <Tags name={name} setValue={setValue} options={options}></Tags>
             </>
         );
     }
