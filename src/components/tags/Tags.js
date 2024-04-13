@@ -2,6 +2,7 @@ import React, { useState } from "react";
 // import {useForm} from "react-hook-form";
 import {categories} from "../../App";
 import "./tags.css"
+import "../dropdown/dropdown.css"
 
 // import InputField, {SubmitButton} from "../input-field/InputField";
 

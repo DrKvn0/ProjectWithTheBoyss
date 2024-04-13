@@ -1,72 +1,38 @@
+:root {
+  --h1-font-size: 3vw; /* 3% of viewport width */
+  --button-font-size: 2vw; /* 2% of viewport width */
+  --button-padding: 1vw; /* 1% of viewport width */
+  --button-top: 20vh; /* 20% of viewport height */
+  --button-left-addExpense: 65vw; /* 65% of viewport width */
+  --button-left-addTag: 48vw; /* 48% of viewport width */
+}
+
 h1 {
-  font-size: 48px;
+  font-size: var(--h1-font-size);
 }
 
-.addExpenseLabel {
-
-
-}
-
-.addExpenseTextField {
-  border-radius: 30px;
-  border-color: transparent;
-  background-color: lightgray;
-  padding: 10px 10px;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 24px;
-  opacity: 0.7;
-}
-
-.input-symbol-euro {
-  position: relative;
-}
-.input-symbol-euro input {
-  padding-left: 18px;
-}
-
-.input-symbol-euro:before {
-  position: absolute;
-  top: 3px;
-  content:"€";
-  font-size: 36px;
-  left: 0;
-}
-.addExpenseButton {
+.addExpenseButton, .addTagButton {
   background-color: #505050;
   color: #fff;
   border: none;
-  padding: 10px 20px;
+  padding: var(--button-padding);
   cursor: pointer;
   border-radius: 5px;
-  font-size: 32px;
+  font-size: var(--button-font-size);
   transition: background-color 0.3s, transform 0.3s;
   position: absolute;
-  top: 40%;
-  left: 65%;
+  top: var(--button-top);
+}
+
+.addExpenseButton {
+  left: var(--button-left-addExpense);
 }
 
 .addTagButton {
-  background-color: #505050;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 5px;
-  font-size: 32px;
-  transition: background-color 0.3s, transform 0.3s;
-  position: absolute;
-  top: 40%;
-  left: 48%;
+  left: var(--button-left-addTag);
 }
 
-.addExpenseButton:hover {
+.addExpenseButton:hover, .addTagButton:hover {
   background-color: #3b3b3b;
   transform: translateY(-4px); /* Move button 2px up on hover */
 }
-
-
-
-
-
-

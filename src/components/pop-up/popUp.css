@@ -1,11 +1,23 @@
+:root {
+    --modal-width: 80vw;
+    --modal-max-width: 752px;
+    --modal-padding: 4vw 2vw 2vw 2vw;
+    --modal-border-radius: 4vw;
+    --modal-translate-y: -5vw;
+    --close-button-size: 6vw;
+    --close-button-top: 4.6vw;
+    --close-button-right: 4.6vw;
+    --done-button-padding: 1.5vw 3.2vw;
+    --done-button-font-size: 3.2vw;
+}
+
 .modal {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.75);
-    /* opacity: 0; */
     overflow: hidden;
     overflow-y: auto;
     transition: opacity 0.3s;
@@ -13,34 +25,32 @@
 }
 
 .modal-wrapper {
-    position: absolute;
-    top: 10%;
-    left: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    min-height: 100%;
+    min-height: 100vh;
+    margin-top: 10vh;
+    padding: 2vw;
 }
 
 .modal-content {
     position: relative;
-    margin: 20px;
-    width: 100%;
-    max-width: 752px;
-    border-radius: 40px;
+    width: var(--modal-width);
+    max-width: var(--modal-max-width);
+    border-radius: var(--modal-border-radius);
     background-color: #ffffff;
-    padding: 40px 20px 20px 20px;
-    transform: translateY(-50px);
+    padding: var(--modal-padding);
+    transform: translateY(var(--modal-translate-y));
     transition: opacity 0.3s, transform 0.3s;
+    margin: auto;
 }
 
 .close-button {
     position: absolute;
-    top: 46px;
-    right: 46px;
-    width: 60px;
-    height: 60px;
+    top: var(--close-button-top);
+    right: var(--close-button-right);
+    width: var(--close-button-size);
+    height: var(--close-button-size);
     padding: 0;
     border: none;
     background-color: transparent;
@@ -56,15 +66,14 @@
     border-color: transparent;
     background-color: #C4CBEE;
     color: white;
-    padding: 15px 32px;
+    padding: var(--done-button-padding);
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 32px;
+    font-size: var(--done-button-font-size);
     opacity: 0.7;
 }
 
 .done-button:hover{
     opacity: 1;
 }
-

@@ -13,25 +13,6 @@
     width: 100%;
     border-collapse: collapse;
 }
-/*
-th {
-    border: 1px solid #ddd;
-    padding: 8px;
-    width: 150px;
-    max-width: 150px;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: left;
-    background-color: #f2f2f2;
-}
-
-td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    width: 150px;
-    max-width: 150px;
-    font-size: 16px;
-}*/
 
 
 
@@ -88,10 +69,10 @@ tbody::-webkit-scrollbar {
 }
 
 .comment, .comment-content{
-    max-width: 400px; /* Максимальная ширина комментария */
-    max-height: 65px; /* Максимальная высота ячейки */
-    word-wrap: break-word; /* Разрывать длинные слова */
-    overflow: hidden; /* Обрезаем текст, который выходит за границы ячейки */
+    max-width: 400px;
+    max-height: 65px;
+    word-wrap: break-word;
+    overflow: hidden;
 }
 
 .comment {

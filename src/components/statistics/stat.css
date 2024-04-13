@@ -1,43 +1,49 @@
+:root {
+    --stat-font-size: 6vw; /* 6% of viewport width */
+    --button-font-size: 3vw; /* 3% of viewport width */
+    --button-padding: 1vw; /* 1% of viewport width */
+    --stat-top: 20vh; /* 20% of viewport height */
+    --stat-left: 30vw; /* 30% of viewport width */
+    --button-top: 20vh; /* 40% of viewport height */
+    --button-left: 23vw; /* 23% of viewport width */
+}
+
 .stat {
     position: absolute;
-    top: 20%;
-    left: 30%;
-    transform: translate(-80%, -70%);
-    font-size: 64px;
+    top: var(--stat-top);
+    left: var(--stat-left);
+    transform: translate(-50%, -50%);
+    font-size: var(--stat-font-size);
+}
+
+.addMonthlyCapButton, .saveMonthlyCapButton {
+    background-color: #505050;
+    color: #fff;
+    border: none;
+    padding: var(--button-padding);
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: var(--button-font-size);
+    transition: background-color 0.3s, transform 0.3s;
+    position: absolute;
+    top: var(--button-top);
+    left: var(--button-left);
 }
 
 .addMonthlyCapButton {
-    background-color: #505050;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 32px;
-    transition: background-color 0.3s, transform 0.3s;
-    position: absolute;
-    top: 40%;
-    left: 23%;
-  }
-  
-  .addMonthlyCapButton:hover {
+    left: calc(var(--button-left) - 10vw); /* 10% of viewport width */
+}
+
+.addMonthlyCapButton:hover {
     background-color: #3b3b3b;
     transform: translateY(-4px); /* Move button 2px up on hover */
-  }
+}
 
-  .saveMonthlyCapButton{
-    background-color: #505050;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 32px;
-    transition: background-color 0.3s, transform 0.3s;
-    position: absolute;
-  }
+.saveMonthlyCapButton {
+    left: calc(var(--button-left) + 10vw); /* 10% of viewport width */
+}
 
-  .saveMonthlyCapButton:hover{
+.saveMonthlyCapButton:hover {
     background-color: #3b3b3b;
     transform: translateY(-4px); /* Move button 2px up on hover */
-  }
+}
