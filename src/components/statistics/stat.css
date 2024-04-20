@@ -4,7 +4,7 @@
     --button-padding: 1vw; /* 1% of viewport width */
     --stat-top: 20vh; /* 20% of viewport height */
     --stat-left: 30vw; /* 30% of viewport width */
-    --button-top: 20vh; /* 40% of viewport height */
+    --button-top: 40vh; /* 40% of viewport height */
     --button-left: 23vw; /* 23% of viewport width */
 }
 

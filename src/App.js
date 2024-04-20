@@ -5,7 +5,9 @@ import PopUp from "./components/pop-up/PopUp";
 import InputField, {SubmitButton} from "./components/input-field/InputField";
 import ExpenseTable from "./components/table/Table";
 import MonthlyCapNumber from "./components/statistics/Stat";
-const expenses = [];
+import PieChartComponent from "./components/statistics/AdvStat";
+
+export const expenses = [];
 
 export const categories = {
     "Eating out": "#FFD1DC",
@@ -15,7 +17,7 @@ export const categories = {
 }
 let total_expenses = 0;
 
-function parseCur(NumStr) {
+export function parseCur(NumStr) {
     const num = NumStr.slice(1).replace(',', '');
     return parseFloat(num);
 }
@@ -80,6 +82,7 @@ export default function App() {
             <br/>
         </PopUp>
         <ExpenseTable data={expenses}/>
+          <PieChartComponent />
       </>
     );
 }

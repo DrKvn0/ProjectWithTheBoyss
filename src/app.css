@@ -2,7 +2,7 @@
   --h1-font-size: 3vw; /* 3% of viewport width */
   --button-font-size: 2vw; /* 2% of viewport width */
   --button-padding: 1vw; /* 1% of viewport width */
-  --button-top: 20vh; /* 20% of viewport height */
+  --button-top: 40vh; /* 20% of viewport height */
   --button-left-addExpense: 65vw; /* 65% of viewport width */
   --button-left-addTag: 48vw; /* 48% of viewport width */
 }
